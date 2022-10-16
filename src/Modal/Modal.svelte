@@ -43,6 +43,9 @@
   /** Specify the ARIA label for the close icon */
   export let iconDescription = "Close the modal";
 
+  /** If modal close knob is enabled. */
+  export let closeable = true;
+
   /** Set to `true` if the modal contains form elements */
   export let hasForm = false;
 
@@ -105,7 +108,7 @@
   function focus(element) {
     const node =
       (element || innerModal).querySelector(selectorPrimaryFocus) || buttonRef;
-    node.focus();
+    node && node.focus();
   }
 
   const openStore = writable(open);
@@ -208,7 +211,7 @@
     }}"
   >
     <div class:bx--modal-header="{true}">
-      {#if passiveModal}
+      {#if passiveModal && closeable}
         <button
           bind:this="{buttonRef}"
           type="button"
@@ -229,7 +232,7 @@
       <h3 id="{modalHeadingId}" class:bx--modal-header__heading="{true}">
         <slot name="heading">{modalHeading}</slot>
       </h3>
-      {#if !passiveModal}
+      {#if !passiveModal && closeable}
         <button
           bind:this="{buttonRef}"
           type="button"

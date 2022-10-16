@@ -6480,6 +6480,18 @@
           "reactive": false
         },
         {
+          "name": "closeable",
+          "kind": "let",
+          "description": "If modal close knob is enabled.",
+          "type": "boolean",
+          "value": "true",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "isRequired": false,
+          "constant": false,
+          "reactive": false
+        },
+        {
           "name": "hasForm",
           "kind": "let",
           "description": "Set to `true` if the modal contains form elements",

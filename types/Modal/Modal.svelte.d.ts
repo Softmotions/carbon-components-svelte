@@ -58,6 +58,12 @@ export interface ModalProps
   iconDescription?: string;
 
   /**
+   * If modal close knob is enabled.
+   * @default true
+   */
+  closeable?: boolean;
+
+  /**
    * Set to `true` if the modal contains form elements
    * @default false
    */
